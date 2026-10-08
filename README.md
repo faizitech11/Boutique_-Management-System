@@ -1,339 +1,83 @@
-# Boutique_-Management-System
+## Introduction:
 
+Software applications are mostly used in every part of our daily life but there are few areas like show rooms, cloth stores still there is need to use management software for handling billing details, customers information, stock details. In order to full fill this gap we designed boutique management software application for cloth stores. This application will reduce manual work and maintain all details in database. Report generation for every month, week and year is possible with this software.
 
-# 👗 Boutique Management System
+### Video Demo: 
+<b>click to go to video</b>
+[![Go To Video](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/BMS.png)](https://drive.google.com/file/d/1KZ89uy86f367tUAIyjWHk3vZDlN50aWR/view?usp=sharing)
 
-**Boutique Management System** is a web-based management application designed to help boutique owners manage their daily business operations from one place.
+## Functionalities of the system:
 
-The system provides modules for **users, products, customers, orders, returns, invoices, and employees**, with a clean dashboard-based interface.
+In a boutique, there are many sections like Designer, New Born Fashion, Luxury, Readymade, Men, Women, Boys, Girls, etc. For each customer an Id is given (to uniquely identify them) to store their purchase and points. After a purchase is made, the customer is asked to fill in their details required to identify their unique ID to store their purchase (products that have been bought) and their price (as points). The price is converted into points and is stored in a relation and these points can be used by the customer to get discounts or any other gifts in their subsequent purchase. If any of purchased product is either damaged or need to be returned, a customer service section is provided where the product purchased can be returned or replaced based on the customers’ wish. While returning the product with the bill of purchase must be returned, so that, it is easier to confirm the purchase in the database. Our overall goal is to make things easier for the manager and employees to access data and information.
 
-## ✨ Features
+## Modules in the system:
 
-* 👤 User Management
-* 👗 Product Management
-* 👥 Customer Management
-* 🛍️ Order Management
-* 🔄 Return Order Management
-* 🧾 Invoice Management
-* 👨‍💼 Employee Management
-* 📊 Dashboard
-* 🔐 Role-based access
-* 🗃️ Database management
-* 📱 Responsive interface
-* 🎨 Modern boutique-style UI
+_This system includes the following modules:_
 
----
+- Customer Personal Information
+- Add/Remove Customer
+- Source Listing
+- Searching
+- Stocks Details
+- Billing Details (Transaction Method Details)
+- Order And Delivery Dates
+- Product Return and Replacement
+- Report Generation
 
-## 🏢 System Modules
+## Benefits of the system:
 
-### 👤 User Management
+This project would be very useful for automation of customer measurements and details management and, it will help them to hold the data of the garments, customers, providers with outstanding ease. Further it can also be used for day to day updating of customer information and new Stocks of Design by generating reports.
 
-Manage system users and their access to different parts of the application.
+## Development Platform:
 
-### 👗 Product Management
+- For Database        -   MySQL
+- For User Interface  -   Python
 
-Add, update, view, and manage boutique products.
+## ER Diagram:
 
-Product information can include:
+![er](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/ImgRes/ER.png)
 
-* Product name
-* Category
-* Price
-* Quantity
-* Product details
-* Availability
+This ER(Entity Relationship) Diagram represents  the model of Boutique  Store Management system Entity. The entity-relationship diagram of boutique store Management System shows all the visual instrument of database tablets and the relations between Products, login, customer data, admin, cart, recent orders etc. It used structure data and to define the relationships between structured data groups of boutique Store Management system Functionalities.
 
-### 👥 Customer Management
+When the user tries to login into  the management system, the credentials that he entered is verified with the _UserName_ and _Password_ in the **Employee** table. Once the user is verified, he is given the permissions to add, modify, delete or view records from **Product**, **Customers** and **ReturnOrder** tables depending on his _RoleRank._
 
-Maintain customer records and manage customer-related information.
+## Schema Diagram:
 
-### 🛍️ Order Management
+![schema](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/ImgRes/Schema.png)
 
-Create and manage customer orders while keeping order information organized.
+In this schema design, a uniqueness is identified through the primary keys which are _CustId_, _EmpId_, _UserId_, _ProdId_, _ReturnId_, and _BillId_. These primary keys become foreign keys when they are referred in other relations which are arrowed in the schema diagram
 
-### 🔄 Return Orders
+## Extended ER Features:
 
-Handle returned products and maintain return-order records.
+![EER1](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/ImgRes/EER1.png)
 
-### 🧾 Invoice Management
+The Entity **Employee** is (disjoint)specialized into 3 types of employees namely: Owner, Full timers and part timers; where the symbol “d” in the superclass entity, represents disjoint meaning that an employee at an instance cannot be both Owners or full times or Part times at the same time. The superclass entity **Employee** has a total participation with its subclass entities meaning that all employee should either be an owner, a full timer or a part timer.
 
-Generate and manage invoices for customer orders.
+![EER2](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/ImgRes/EER2.png)
 
-### 👨‍💼 Employee Management
+The Entity **Products** is (disjoint)specialized into 5 types of Products namely: DesignerSaree, Salwar, churidhar, ReadymadeSherwani, and CoatSuits with ProdId, ProdName, Qty, Gender, Type and amount as commonly inherited attributes; where the symbol “d” in the superclass entity, represents disjoint meaning that an individual product at an instance cannot be another product at the same time. The superclass entity **Products** has a total participation with its subclass entities meaning that all employee should either be a DesignerSaree, Salwar, churidhar, ReadymadeSherwani, or CoatSuits.
 
-Manage employee information and employee-related operations.
+## Implementing Extended ER features:
 
-### 📊 Dashboard
+![IEER](https://raw.githubusercontent.com/Jegadit/BoutiqueManagementSystem/main/ImgRes/IEER.png)
 
-The dashboard provides a centralized overview of the boutique management system.
+## Connectivity and connectors:
 
----
+Connectivity refers to the connection of middleware or user-interface with the back-end database of the application. Such types of connections are done with the help of a connector( eg: JDBC, ODBC). A database connector is a software that connects an application to any database.
 
-## 🛠️ Technology Stack
+## Why Python?
 
-### Backend
+With Python, one can easily work on prototype development and ad-hoc programming functions. This feature makes Python the ideal language for web development. You can save time, reduce cost, and get an efficient web application with functioning prototypes.
 
-* Python
-* Flask
+Python's standard database interface is Python DB-API. This interface uses the MySQL dB module for only MySQL. This module is independent of any other database engine, so we need to write Python scripts to access any other database engine.
 
-### Frontend
+## Python- MySQL -connector:
 
-* HTML5
-* CSS3
-* JavaScript
+To access the MySQL database from Python, you need a database driver. MySQL Connector/Python is a standardized database driver provided by MySQL. Python MySQL Connector is a Python driver that helps to integrate Python and MySQL. This Python MySQL library allows the conversion between Python and MySQL data types. MySQL Connector API is implemented using pure Python and does not require any third-party library.
 
-### Database
+## Why have I used Python MySQL-connector:
 
-* MySQL
-
-### Tools
-
-* VS Code
-* XAMPP
-* Git
-* GitHub
-
----
-
-## 📁 Project Structure
-
-```text
-BoutiqueManagementSystem/
-│
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── templates/
-│   ├── index.html
-│   ├── user.html
-│   ├── products.html
-│   ├── customers.html
-│   ├── returnorder.html
-│   ├── invoice.html
-│   ├── modInv.html
-│   └── employee.html
-│
-├── myApp.py
-├── database/
-└── README.md
-```
-
-> The exact folder structure may vary depending on the current project version.
-
----
-
-## 🔗 Main Routes
-
-The application includes routes for major boutique operations:
-
-```text
-/user
-/products
-/customers
-/returnorder
-/invoice
-```
-
-Additional routes include:
-
-```text
-/modInv
-/employee
-```
-
-These routes can be accessed according to the user's role and system permissions.
-
----
-
-## 👥 User Role
-
-The project includes role-based functionality.
-
-Current project role:
-
-```text
-OWNER
-```
-
-The system can be extended with additional roles such as:
-
-```text
-Admin
-Manager
-Employee
-Staff
-```
-
----
-
-## 🗄️ Database
-
-The project uses a database named:
-
-```text
-BoutiqueManagementSystem
-```
-
-Make sure the required database and tables are created before running the application.
-
----
-
-## ▶️ Run the Project
-
-### 1. Open the Project Folder
-
-```bash
-cd C:\xampp\htdocs\B
-```
-
-### 2. Install Flask
-
-```bash
-pip install flask
-```
-
-If the project contains a `requirements.txt` file:
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Start the Application
-
-```bash
-python myApp.py
-```
-
-### 4. Open in Browser
-
-```text
-http://127.0.0.1:5000
-```
-
----
-
-## ⚙️ Database Configuration
-
-Before running the project, configure the database connection inside the Flask application according to your local MySQL/XAMPP setup.
-
-Example configuration:
-
-```python
-DB_HOST = "localhost"
-DB_USER = "root"
-DB_PASSWORD = ""
-DB_NAME = "BoutiqueManagementSystem"
-```
-
-Use your actual database credentials if they are different.
-
----
-
-## 🔄 Application Flow
-
-```text
-                    ┌─────────────────┐
-                    │     Dashboard   │
-                    └────────┬────────┘
-                             │
-          ┌──────────────────┼──────────────────┐
-          │                  │                  │
-          ▼                  ▼                  ▼
-       Products          Customers            Users
-          │                  │
-          └──────────┬───────┘
-                     ▼
-                  Orders
-                     │
-              ┌──────┴──────┐
-              ▼             ▼
-        Return Orders     Invoice
-                            │
-                            ▼
-                     Invoice Management
-```
-
----
-
-## 🎨 UI & Design
-
-The application uses a boutique-focused dashboard interface designed to provide a professional management experience.
-
-### UI Highlights
-
-* Modern dashboard
-* Boutique-inspired design
-* Responsive layout
-* Navigation sidebar
-* Management cards
-* Tables for business data
-* Interactive buttons
-* Form-based data management
-* Clean visual hierarchy
-
----
-
-## 🚀 Future Improvements
-
-The system can be further expanded with:
-
-* 🧾 Advanced POS system
-* 📏 Customer measurements
-* 📊 Sales reports
-* 📈 Business analytics
-* 👗 Dress preview system
-* 📱 WhatsApp customer reminders
-* 💳 Online payments
-* 📦 Inventory alerts
-* 🧾 Printable invoices
-* 📅 Appointment management
-* 👥 Advanced employee permissions
-
----
-
-## 👨‍💻 Project Team
-
-### The 4th Legion
-
-**Role:** Owner
-
-The project was developed as a practical boutique-management solution with a focus on business workflow, database management, and web application development.
-
----
-
-## 💻 Skills Demonstrated
-
-```text
-Python
-Flask
-HTML5
-CSS3
-JavaScript
-MySQL
-CRUD Operations
-REST/Web Routing
-Database Integration
-Role-Based Access
-Responsive UI
-Git & GitHub
-```
-
----
-
-## 📌 Project Purpose
-
-The main purpose of the **Boutique Management System** is to digitize common boutique operations and provide a centralized platform for managing products, customers, orders, returns, invoices, users, and employees.
-
-It demonstrates practical experience in **Python Flask backend development, MySQL database integration, CRUD operations, routing, and frontend UI development**.
-
----
-
-## 📄 License
-
-This project is developed for **educational, portfolio, and demonstration purposes**.
-
----
-
-⭐ **If you find this project useful, consider giving the repository a star!**
+- MySQL Connector/Python is an API implemented using pure Python. It means that you do not need to install any MySQL client library or any Python modules except the standard library.
+- MySQL Connector/Python enables Python programs to access MySQL databases, using an API that is compliant with the Python Database API. It is written in pure Python and does not have any dependencies except for the Python Standard Library.
+- MySQL Connector/Python allows you to convert the parameter’s value between Python and MySQL data types e.g., Python datetime and MySQL DATETIME.
+- MySQL Connector/Python is designed specifically to MySQL. It supports all MySQL extensions such as LIMIT clause.
